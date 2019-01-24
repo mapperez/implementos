@@ -1,0 +1,22 @@
+{
+    "name": "apinode",
+    "version": "1.0.0",
+    "description": "Api Node Js",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "INGYDEV",
+    "license": "ISC",
+    "dependencies": {
+        "apollo-server": "^2.3.1",
+        "apollo-server-express": "^2.3.1",
+        "graphql": "^14.1.1",
+        "graphql-tools": "^4.0.3",
+        "graphql-yoga": "^1.17.0",
+        "joi": "^14.3.1",
+        "mongoose": "^5.4.4",
+        "underscore": "^1.9.1"
+    }
+}

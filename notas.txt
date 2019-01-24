@@ -1,0 +1,11 @@
+
+// Copia carpeta completa al  servidor remoto
+sudo scp -r /Users/marioantonioperezperez/Documents/Proyectos/Ingydev/ApiNode implementos@200.68.46.202:/var/apinode
+
+// Composer
+docker-compose up -d
+
+
+// 172.19.0.2
+
+// Impl3m3nt0s2o18

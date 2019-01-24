@@ -1,0 +1,41 @@
+scalar JSON
+scalar Boolean
+scalar Date
+
+type Error {
+  path: String!
+  message: String!
+}
+
+type Payload {
+  success: Boolean
+  error: [Error]
+  data: JSON
+}
+
+
+type Localizacion {
+  _id: ID!
+  sistema: String!
+  llave_negocio: String!
+  usuario:String!
+  fecha: Date
+  latitud: String!
+  longitud: String!
+}
+input ILocalizacion {
+  sistema: String!
+  llave_negocio: String!
+  usuario:String!
+  fecha: Date
+  latitud: String!
+  longitud: String!
+}
+type Query {
+  getLocalizacion(_id: ID): Localizacion
+  allLocalizacion(skip: Int, first: Int, filter: String, orderBy: String): [Localizacion]
+}
+
+type Mutation {
+    createLocalizacion(input: ILocalizacion!): Localizacion
+}
