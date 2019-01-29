@@ -1,4 +1,6 @@
 const Joi = require("joi");
+const { MongooseQueryParser } = require('mongoose-query-parser')
+const parser = new MongooseQueryParser();
 
 function validateUser(user) {
     const schema = Joi.object().keys({
