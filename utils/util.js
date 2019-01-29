@@ -94,6 +94,7 @@ function queryparcer(qry) {
 
     const predefined = {};
     const parsed = parser.parse(qry, predefined);
+    console.log(parsed.filter);
     return parsed.filter
 }
 
