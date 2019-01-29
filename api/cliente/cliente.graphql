@@ -44,11 +44,11 @@ input ICliente {
   segmento: String!
   subSegmento: String!
 }
-type Query {
+extend type Query {
   getCliente(_id: ID): Cliente!
   allCliente(skip: Int, first: Int, filter: String, orderBy: String): [Cliente]!
 }
-type Mutation {
+extend type Mutation {
   createCliente(input: ICliente!): Cliente!
   updateCliente(_id: ID!, input: ICliente!): Cliente!
   deleteCliente(_id: ID!): Cliente!

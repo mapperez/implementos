@@ -9,7 +9,7 @@ const PORT = 4000;
 
 // Express
 const app = express();
-const port = 4200;
+
 
 //Cors
 app.use(function(req, res, next) {

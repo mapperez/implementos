@@ -1,4 +1,5 @@
-scalar DATE
+scalar Boolean
+scalar Date
 scalar JSON
 
 type Correo {

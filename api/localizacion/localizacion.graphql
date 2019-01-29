@@ -1,6 +1,3 @@
-scalar JSON
-scalar Boolean
-scalar Date
 
 type Error {
   path: String!
