@@ -89,9 +89,20 @@ function formattError(error) {
     return objErrors;
 }
 
+
+function queryparcer(qry) {
+
+    const predefined = {};
+    const parsed = parser.parse(qry, predefined);
+    return parsed.filter
+}
+
+
+
 module.exports = {
     validateUser,
     getDateInNumbers,
     parseDate,
-    formattError
+    formattError,
+    queryparcer
 }
