@@ -1,0 +1,55 @@
+
+
+type Cliente {
+  _id: ID!
+  rut: String!
+  nombre: String
+  apellido: String
+  correos: [Correo]
+  telefonos: [Telefono]
+  direcciones: [Direccion]
+  cod_region: String!
+  provincia: String!
+  ciudad: String
+  clasificacionFinanciera: String!
+  tipoCartera: String!
+  clasificacion: String!
+  condicionPago: String!
+  credito: Int
+  creditoUtilizado: Int
+  formaPago: String!
+  giros: [Giro]
+  segmento: String!
+  subSegmento: String!
+}
+
+input ICliente {
+ rut: String!
+  nombre: String
+  apellido: String
+  correos: [ICorreo]
+  telefonos: [ITelefono]
+  direcciones: [IDireccion]
+  cod_region: String!
+  provincia: String!
+  ciudad: String
+  clasificacionFinanciera: String!
+  tipoCartera: String!
+  clasificacion: String!
+  condicionPago: String!
+  credito: Int
+  creditoUtilizado: Int
+  formaPago: String!
+  giros: [IGiro]
+  segmento: String!
+  subSegmento: String!
+}
+type Query {
+  getCliente(_id: ID): Cliente!
+  allCliente(skip: Int, first: Int, filter: String, orderBy: String): [Cliente]!
+}
+type Mutation {
+  createCliente(input: ICliente!): Cliente!
+  updateCliente(_id: ID!, input: ICliente!): Cliente!
+  deleteCliente(_id: ID!): Cliente!
+}

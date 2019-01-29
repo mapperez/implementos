@@ -1,0 +1,42 @@
+scalar DATE
+scalar JSON
+
+type Correo {
+  correo: String!
+}
+type Telefono {
+  telefono: String!
+}
+
+type Direccion {
+  calle: String
+  numero: String
+  comuna: String
+  direccionCompleta: String
+  tipo: String
+}
+
+type Giro {
+  codigo: String!
+  nombre: String!
+}
+
+input ICorreo {
+  correo: String!
+}
+input ITelefono {
+  telefono: String!
+}
+
+input IDireccion {
+  calle: String
+  numero: String
+  comuna: String
+  direccionCompleta: String
+  tipo: String
+}
+
+input IGiro {
+  codigo: String!
+  nombre: String!
+}
