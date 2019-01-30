@@ -1,14 +1,4 @@
 
-type Error {
-  path: String!
-  message: String!
-}
-
-type Payload {
-  success: Boolean
-  error: [Error]
-  data: JSON
-}
 
 
 type Localizacion {

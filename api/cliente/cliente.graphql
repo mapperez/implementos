@@ -47,6 +47,7 @@ input ICliente {
 extend type Query {
   getCliente(_id: ID): Cliente!
   allCliente(skip: Int, first: Int, filter: String, orderBy: String): [Cliente]!
+  agrCliente(skip: Int, first: Int, filter: String, orderBy: String): Payload!
 }
 extend type Mutation {
   createCliente(input: ICliente!): Cliente!

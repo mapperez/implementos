@@ -25,10 +25,10 @@ let hospro = '192.168.211.77'
 
 if (process.env.NODE_ENV === 'dev') {
     console.log("NODE DEVELOPER");
-    urlMongo = `mongodb://${hosdev}:27017/SmartMetering`
+    urlMongo = `mongodb://${hosdev}:27017/${dbName}`
 } else {
     console.log("NODE PRODUCCTION");
-    urlMongo = `mongodb://${hospro}:27017/SmartMetering`
+    urlMongo = `mongodb://${hospro}:27017/${dbName}`
 
 }
 

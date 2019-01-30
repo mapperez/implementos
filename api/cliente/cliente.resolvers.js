@@ -28,6 +28,40 @@ module.exports = {
 
                 return [];
             }
+        },
+        async agrCliente(_, { first = 10, skip = 0, filter = "", orderBy }, ctx) {
+
+            try {
+
+                let datax = await ctx.models.cliente.aggregate([{
+                    $group: {
+                        _id: filter, //$region is the column name in collection
+                        count: { $sum: 1 }
+                    }
+                }])
+
+
+
+
+                return {
+                    success: true,
+                    error: [],
+                    data: datax
+                };
+
+
+
+            } catch (error) {
+                return {
+                    success: false,
+                    error: formattError(error, []),
+                    data: []
+                };
+
+            }
+
+
+
         }
 
     },
