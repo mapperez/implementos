@@ -1,6 +1,32 @@
 const { queryparcer, parseDate, formattError } = require('../../utils/util')
 
 
+async function agrcli(filter, ctx) {
+
+    let dataz = []
+
+
+    for (var i = 0, len = filter.length; i < len; i++) {
+        let item = await ctx.models.cliente.aggregate([{
+            $group: {
+                _id: filter[i], //$region is the column name in collection
+                count: { $sum: 1 },
+
+            }
+        }])
+        dataz.push(item)
+    }
+
+
+
+
+
+
+
+    return dataz
+
+
+}
 
 module.exports = {
     Query: {
@@ -29,18 +55,12 @@ module.exports = {
                 return [];
             }
         },
-        async agrCliente(_, { first = 10, skip = 0, filter = "", orderBy }, ctx) {
+        async agrCliente(_, { first = 10, skip = 0, filter = [], orderBy }, ctx) {
 
             try {
 
-                let datax = await ctx.models.cliente.aggregate([{
-                    $group: {
-                        _id: filter, //$region is the column name in collection
-                        count: { $sum: 1 }
-                    }
-                }])
 
-
+                let datax = await agrcli(filter, ctx)
 
 
                 return {
@@ -52,6 +72,7 @@ module.exports = {
 
 
             } catch (error) {
+                console.log(error);
                 return {
                     success: false,
                     error: formattError(error, []),
