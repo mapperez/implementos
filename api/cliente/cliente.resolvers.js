@@ -14,7 +14,10 @@ async function agrcli(filter, ctx) {
 
             }
         }])
-        dataz.push(item)
+        dataz.push({
+            agr: filter[i],
+            data: item
+        })
     }
 
 
